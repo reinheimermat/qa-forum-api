@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module'
 import { AuthenticateController } from './controllers/authenticate.controller'
 import { CreateAccountController } from './controllers/create-account.controller'
 import { CreateQuestionController } from './controllers/create-question.controller'
+import { FetchRecentQuestionsController } from './controllers/fetch-recent-questions.controller'
 import { GoogleAuthController } from './controllers/google-auth.controller'
 import { envSchema } from './env'
 import { PrismaService } from './prisma/prisma.service'
@@ -21,6 +22,7 @@ import { PrismaService } from './prisma/prisma.service'
     AuthenticateController,
     CreateQuestionController,
     GoogleAuthController,
+    FetchRecentQuestionsController,
   ],
   providers: [PrismaService, AuthModule],
 })
