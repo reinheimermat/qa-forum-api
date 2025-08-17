@@ -6,8 +6,8 @@ import {
   UseGuards,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
-import { GoogleOauthGuard } from 'src/auth/guards/google-oauth.guard'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { GoogleOauthGuard } from '@/auth/guards/google-oauth.guard'
+import { PrismaService } from '@/prisma/prisma.service'
 
 type GoogleUserPayload = {
   googleId: string

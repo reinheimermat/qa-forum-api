@@ -6,7 +6,7 @@ import {
   Strategy,
   type VerifyCallback,
 } from 'passport-google-oauth20'
-import type { Env } from 'src/env'
+import type { Env } from '@/env'
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
