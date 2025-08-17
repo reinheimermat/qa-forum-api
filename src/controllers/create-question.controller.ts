@@ -1,7 +1,7 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common'
-import { AuthGuard } from '@nestjs/passport'
 import { CurrentUser } from 'src/auth/current-user.decorator'
-import type { UserPayload } from 'src/auth/jwt.strategy'
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard'
+import type { UserPayload } from 'src/auth/strategies/jwt.strategy'
 import { ZodValidationPipe } from 'src/pipes/zod-validation.pipe'
 import { PrismaService } from 'src/prisma/prisma.service'
 import z from 'zod'
@@ -14,7 +14,7 @@ const createQuestionBodySchema = z.object({
 type CreateQuestionBodySchema = z.infer<typeof createQuestionBodySchema>
 
 @Controller('/questions')
-@UseGuards(AuthGuard('jwt'))
+@UseGuards(JwtAuthGuard)
 export class CreateQuestionController {
   constructor(private prisma: PrismaService) {}
 
